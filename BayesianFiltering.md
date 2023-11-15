@@ -116,7 +116,9 @@ $$
 
 此时均值$\mu_k$是一个向量$\overrightarrow{\mu_k}$，方差$\sigma_k^2$是协方差矩阵$\Sigma_k$，形式如下：
 $$
-\begin{cases}
-\
-\end{cases}
+\overrightarrow{\mu}_k^-=F\cdot \overrightarrow{\mu}_{k+1}^+ \\
+\Sigma_k^-=F\cdot \Sigma_{k-1}^+\cdot F^T+Q \\
+K=\Sigma_k^-H^T(H\Sigma_k^-H^T+R)^{-1} \\
+\overrightarrow{\mu}_k^+=\overrightarrow{\mu}_k^-+K(\overrightarrow{x}_k-H\cdot \overrightarrow{\mu}_k^-) \\
+\Sigma_k^+=(I-KH)\Sigma_k^-
 $$
